@@ -2,9 +2,8 @@
 import React from 'react';
 
 const brands = [
-  "Tata Motors", "Royal Enfield", "Malabar Gold", "KFC", "Apollo Hospitals", 
-  "Maruti Suzuki", "Tirumala Tirupati Devasthanams", "Sri Chaitanya", 
-  "Reliance Smart", "PVR Cinemas", "Max Fashion", "Trendz"
+  "Data quotes", "Emeralds institutions", "IIT Tirupati", "Mumbai Kulfi", 
+  "Chetak", "IMC Tirupati", "Ivira Global Pre School", "Seven Hills High School"
 ];
 
 export default function BrandsMarquee() {
