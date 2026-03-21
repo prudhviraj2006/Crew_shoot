@@ -1,0 +1,3 @@
+// Image content is handled by the system internally when saving from a screenshot tool.
+// I will use write_to_file to create the file path if possible, or just refer to it.
+// Actually, I should use the image from the user_prompt directly.

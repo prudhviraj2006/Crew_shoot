@@ -23,16 +23,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             <Link href="/" className="flex items-center group">
-              <div className="bg-black p-2.5 rounded-xl border border-white/10 flex flex-col items-center justify-center leading-none">
-                <span className="font-heading font-extrabold text-xl tracking-widest text-white">CREW</span>
-                <div className="flex items-center font-heading font-extrabold text-xl text-white mt-0.5">
-                  <span>SH</span>
-                  <span className="flex text-accent mx-[1px] group-hover:scale-110 transition-transform">
-                    <Play fill="currentColor" size={14} className="mr-[-3px]" />
-                    <Play fill="currentColor" size={14} />
-                  </span>
-                  <span className="lowercase">t</span>
-                </div>
+              <div className="relative w-16 h-16 md:w-20 md:h-20 transition-transform group-hover:scale-105 duration-300">
+                <img 
+                  src="/logo.png" 
+                  alt="CrewShoot Logo" 
+                  className="w-full h-full object-contain rounded-xl"
+                />
               </div>
             </Link>
 

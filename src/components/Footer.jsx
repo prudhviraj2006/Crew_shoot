@@ -10,16 +10,12 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center group w-fit">
-            <div className="bg-black p-2.5 rounded-xl border border-white/10 flex flex-col items-center justify-center leading-none">
-              <span className="font-heading font-extrabold text-xl tracking-widest text-white uppercase">CREW</span>
-              <div className="flex items-center font-heading font-extrabold text-xl text-white mt-0.5">
-                <span>SH</span>
-                <span className="flex text-accent mx-[1px] group-hover:scale-110 transition-transform">
-                  <span className="w-0 h-0 border-y-[7px] border-y-transparent border-l-[11px] border-l-accent mr-[-2px]"></span>
-                  <span className="w-0 h-0 border-y-[7px] border-y-transparent border-l-[11px] border-l-accent"></span>
-                </span>
-                <span className="lowercase">t</span>
-              </div>
+            <div className="relative w-16 h-16 transition-transform group-hover:scale-105 duration-300">
+              <img 
+                src="/logo.png" 
+                alt="CrewShoot Logo" 
+                className="w-full h-full object-contain rounded-xl"
+              />
             </div>
           </Link>
           
