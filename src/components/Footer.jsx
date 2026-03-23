@@ -45,10 +45,10 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-white font-heading font-bold text-lg mb-6 uppercase tracking-wider">Legal</h4>
-            <ul className="flex flex-col gap-4 text-white/50 text-sm">
-              <li><Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
-              <li><Link href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/cancellation" className="hover:text-accent transition-colors">Cancellation Policy</Link></li>
+            <ul className="flex flex-col gap-4 text-sm">
+              <li><Link href="/terms" className="text-white/60 hover:text-accent transition-all duration-300">Terms & Conditions</Link></li>
+              <li><Link href="/privacy" className="text-white/60 hover:text-accent transition-all duration-300">Privacy Policy</Link></li>
+              <li><Link href="/cancellation" className="text-white/60 hover:text-accent transition-all duration-300">Cancellation Policy</Link></li>
             </ul>
           </div>
         </div>

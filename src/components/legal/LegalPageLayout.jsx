@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
 
 export const HighlightBox = ({ children }) => (
   <div className="bg-accent/10 border-l-[3px] border-accent rounded-lg p-6 my-8">
@@ -60,36 +59,24 @@ export default function LegalPageLayout({
           <main className="max-w-[800px] w-full mx-auto lg:mx-0">
             {/* Header */}
             <header className="mb-20">
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-block bg-[#1a1a1a] text-[#888] text-[10px] font-black uppercase tracking-[0.25em] px-4 py-1.5 rounded-full mb-8 border border-white/5 shadow-2xl"
-              >
+              <div className="inline-block bg-[#1a1a1a] text-[#888] text-[10px] font-black uppercase tracking-[0.25em] px-4 py-1.5 rounded-full mb-8 border border-white/5 shadow-2xl">
                 Last updated: {lastUpdated}
-              </motion.div>
+              </div>
               <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 tracking-tighter capitalize leading-[1.1]">{title}</h1>
               <p className="text-[#ccc] text-xl font-light leading-relaxed max-w-2xl">{subtitle}</p>
             </header>
 
             {/* Sections */}
             <div className="space-y-16">
-              {sections.map((section, idx) => (
-                <motion.section 
-                  key={section.id} 
-                  id={section.id} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="scroll-mt-32"
-                >
+              {sections.map((section) => (
+                <section key={section.id} id={section.id} className="scroll-mt-32">
                   <h2 className="font-heading font-bold text-[18px] text-white pl-[12px] border-l-[3px] border-accent mb-8 leading-none py-1 uppercase tracking-tight">
                     {section.title}
                   </h2>
                   <div className="text-[15px] font-light text-[#ccc] leading-[1.9] space-y-6">
                     {section.content}
                   </div>
-                </motion.section>
+                </section>
               ))}
             </div>
 
