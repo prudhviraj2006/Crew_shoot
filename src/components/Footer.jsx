@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Instagram, Mail, MapPin, Phone, CreditCard, ShieldCheck } from "lucide-react";
+import Logo from "./Logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,13 +11,7 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center group w-fit">
-            <div className="relative w-16 h-16 transition-transform group-hover:scale-105 duration-300">
-              <img 
-                src="/logo.png" 
-                alt="CrewShoot Logo" 
-                className="w-full h-full object-contain rounded-xl"
-              />
-            </div>
+            <Logo className="w-16 h-16" />
           </Link>
           
           <p className="text-white/60 text-base max-w-xs leading-relaxed">

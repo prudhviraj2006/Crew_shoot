@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
 import BookingModal from "./BookingModal";
 
 export default function Navbar() {
@@ -23,13 +24,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             <Link href="/" className="flex items-center group">
-              <div className="relative w-16 h-16 md:w-20 md:h-20 transition-transform group-hover:scale-105 duration-300">
-                <img 
-                  src="/logo.png" 
-                  alt="CrewShoot Logo" 
-                  className="w-full h-full object-contain rounded-xl"
-                />
-              </div>
+              <Logo className="w-16 h-16 md:w-20 md:h-20" />
             </Link>
 
             {/* Desktop Nav */}
