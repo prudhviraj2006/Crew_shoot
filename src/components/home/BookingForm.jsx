@@ -271,7 +271,7 @@ I'd like to book an instant reel shoot.
 Please confirm my booking. Thank you!`;
 
       setTimeout(() => {
-        window.open(`https://wa.me/919360331912?text=${encodeURIComponent(waMsg)}`, '_blank');
+        window.open(`https://wa.me/916281998732?text=${encodeURIComponent(waMsg)}`, '_blank');
         setIsSubmitting(false);
         if (isModal) onClose();
       }, 2000);

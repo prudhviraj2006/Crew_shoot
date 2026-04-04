@@ -16,7 +16,7 @@ export default function BecomeCreator() {
     e.preventDefault();
     const { name, mobile, instagram, iphone, apps, reelLink, location } = formData;
     const msg = `Hey Crewshoot! I'm applying to be a Creator.%0a%0aName: ${name}%0aMobile: ${mobile}%0aIG: @${instagram.replace('@', '')}%0aiPhone: ${iphone}%0aEditing App: ${apps}%0aReel Link: ${reelLink}%0aLocation: ${location}`;
-    window.open(`https://wa.me/919360331912?text=${msg}`, '_blank');
+    window.open(`https://wa.me/916281998732?text=${msg}`, '_blank');
   };
 
   const benefits = [

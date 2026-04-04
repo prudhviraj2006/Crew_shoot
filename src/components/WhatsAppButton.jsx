@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/919360331912?text=Hey%20Crewshoot%21%20I%20want%20to%20book%20an%20instant%20reel%21"
+      href="https://wa.me/916281998732?text=Hey%20Crewshoot%21%20I%20want%20to%20book%20an%20instant%20reel%21"
       target="_blank"
       rel="noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl animate-pulse-slow hover:scale-110 active:scale-95 transition-transform flex items-center justify-center cursor-pointer group"
