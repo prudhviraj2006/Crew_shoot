@@ -38,7 +38,7 @@ export default function PricingBestsellers() {
             <h3 className="text-3xl font-heading font-extrabold mb-4 uppercase italic">Single Reel Package</h3>
             <div className="mb-8 flex items-baseline gap-2">
               <span className="text-4xl font-black text-white">₹1,999</span>
-              <span className="text-white/40 text-sm font-bold tracking-widest">+ GST</span>
+              
             </div>
 
             <ul className="space-y-4 mb-10 flex-grow">
@@ -60,7 +60,7 @@ export default function PricingBestsellers() {
             </ul>
 
             <button 
-              onClick={() => handleBookNow("Single Reel Package — ₹1,999 +GST")}
+              onClick={() => handleBookNow("Single Reel Package — ₹1,999")}
               className="w-full block text-center border-2 border-white/10 group-hover:border-accent/50 group-hover:bg-accent group-hover:text-black text-white font-black uppercase tracking-widest py-5 rounded-2xl transition-all duration-300 italic"
             >
               Book Your Session
@@ -80,7 +80,7 @@ export default function PricingBestsellers() {
             <h3 className="text-3xl font-heading font-extrabold mb-4 uppercase italic">Double Reel Package</h3>
             <div className="mb-8 flex items-baseline gap-2">
               <span className="text-4xl font-black text-white">₹4,999</span>
-              <span className="text-white/40 text-sm font-bold tracking-widest">+ GST</span>
+              
             </div>
 
             <ul className="space-y-4 mb-10 flex-grow">
@@ -102,7 +102,7 @@ export default function PricingBestsellers() {
             </ul>
 
             <button 
-              onClick={() => handleBookNow("Double Reel Package — ₹4,999 +GST ⭐ Most Popular")}
+              onClick={() => handleBookNow("Double Reel Package — ₹4,999 ⭐ Most Popular")}
               className="w-full block text-center bg-accent hover:bg-white text-black font-black uppercase tracking-widest py-5 rounded-2xl transition-all duration-300 italic shadow-[0_10px_20px_rgba(245,166,35,0.3)]"
             >
               Book Your Session

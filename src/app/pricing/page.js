@@ -9,20 +9,20 @@ export default function Pricing() {
   const [selectedPackage, setSelectedPackage] = useState("");
 
   const reelPackages = [
-    { title: "Single Reel Package — ₹1,999 +GST", price: "₹1,999", features: ["1 Hour Shoot", "1 Cinematic Reel", "Shot on iPhone", "Instant Delivery", "2 Minor Revisions", "Crewshoot Watermark"] },
-    { title: "Double Reel Package — ₹4,999 +GST ⭐ Most Popular", price: "₹4,999", badge: "Most Popular 🔥", isPopular: true, features: ["3 Hours Shoot", "2 Cinematic Reels", "Shot on iPhone", "Instant Preview", "2 Minor Revisions", "Crewshoot Watermark"] },
+    { title: "Single Reel Package — ₹1,999", price: "₹1,999", features: ["1 Hour Shoot", "1 Cinematic Reel", "Shot on iPhone", "Instant Delivery", "2 Minor Revisions", "Crewshoot Watermark"] },
+    { title: "Double Reel Package — ₹4,999 ⭐ Most Popular", price: "₹4,999", badge: "Most Popular 🔥", isPopular: true, features: ["3 Hours Shoot", "2 Cinematic Reels", "Shot on iPhone", "Instant Preview", "2 Minor Revisions", "Crewshoot Watermark"] },
   ];
 
   const eventPackages = [
-    { title: "Event Starter — ₹9,999 +GST", price: "₹9,999", features: ["6 Hours Coverage", "3 Cinematic Reels", "BTS Clips Included", "Crowd & Vibe Clips", "Instant Delivery", "2 Revisions Per Reel", "Raw Footage Access"] },
-    { title: "Event Pro — ₹14,999 +GST", price: "₹14,999", features: ["6 Hours Coverage", "5 Cinematic Reels", "2 Reel Makers Onsite", "BTS Content", "Live Instagram Stories", "2 Revisions Per Reel", "Raw Footage Access"] },
+    { title: "Event Starter — ₹9,999", price: "₹9,999", features: ["6 Hours Coverage", "3 Cinematic Reels", "BTS Clips Included", "Crowd & Vibe Clips", "Instant Delivery", "2 Revisions Per Reel", "Raw Footage Access"] },
+    { title: "Event Pro — ₹14,999", price: "₹14,999", features: ["6 Hours Coverage", "5 Cinematic Reels", "2 Reel Makers Onsite", "BTS Content", "Live Instagram Stories", "2 Revisions Per Reel", "Raw Footage Access"] },
   ];
 
   const weddingPackages = [
-    { title: "Wedding Starter — ₹14,999 +GST", price: "₹14,999", features: ["1 Event (6hrs)", "4 Cinematic Reels", "Same Day Preview", "2 Revisions Per Reel", "Crewshoot Watermark", "Raw Footage Included"] },
-    { title: "Wedding Classic — ₹39,999 +GST ⭐ Most Popular", price: "₹39,999", badge: "Most Popular 🔥", isPopular: true, features: ["3 Events Covered", "12 Cinematic Reels", "2 Reel Makers Onsite", "Same Day Preview", "2 Revisions Per Reel", "Raw Footage Included"] },
-    { title: "Wedding Premium — ₹49,999 +GST 🏆 Best Seller", price: "₹49,999", badge: "Best Seller ⭐", isBestSeller: true, features: ["4 Events Covered", "15 Cinematic Reels", "2 Reel Makers Onsite", "High Quality Photos", "Same Day Preview", "2 Revisions Per Reel", "Raw Footage Included"] },
-    { title: "Wedding Signature — ₹74,999 +GST", price: "₹74,999", features: ["6 Events Covered", "25 Cinematic Reels", "2 Reel Makers Onsite", "Dedicated Content Curator", "Social Media Management", "150 Professional Photos", "Live Stories Coverage", "2 Revisions Per Reel"] },
+    { title: "Wedding Starter — ₹14,999", price: "₹14,999", features: ["1 Event (6hrs)", "4 Cinematic Reels", "Same Day Preview", "2 Revisions Per Reel", "Crewshoot Watermark", "Raw Footage Included"] },
+    { title: "Wedding Classic — ₹39,999 ⭐ Most Popular", price: "₹39,999", badge: "Most Popular 🔥", isPopular: true, features: ["3 Events Covered", "12 Cinematic Reels", "2 Reel Makers Onsite", "Same Day Preview", "2 Revisions Per Reel", "Raw Footage Included"] },
+    { title: "Wedding Premium — ₹49,999 🏆 Best Seller", price: "₹49,999", badge: "Best Seller ⭐", isBestSeller: true, features: ["4 Events Covered", "15 Cinematic Reels", "2 Reel Makers Onsite", "High Quality Photos", "Same Day Preview", "2 Revisions Per Reel", "Raw Footage Included"] },
+    { title: "Wedding Signature — ₹74,999", price: "₹74,999", features: ["6 Events Covered", "25 Cinematic Reels", "2 Reel Makers Onsite", "Dedicated Content Curator", "Social Media Management", "150 Professional Photos", "Live Stories Coverage", "2 Revisions Per Reel"] },
   ];
 
   const addOns = [
@@ -64,7 +64,7 @@ export default function Pricing() {
       
       <div className="mb-8 flex items-baseline gap-2 border-b border-white/5 pb-6">
         <span className="text-4xl font-black text-white">{pkg.price}</span>
-        <span className="text-white/40 text-sm font-bold tracking-widest uppercase">+ GST</span>
+        
       </div>
 
       <ul className="space-y-4 mb-10 flex-grow">

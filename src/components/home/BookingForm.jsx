@@ -10,7 +10,7 @@ import emailjs from "@emailjs/browser";
 import { supabase } from "@/lib/supabase";
 
 const PACKAGES = {
-  "Single Reel Package — ₹1,999 +GST": {
+  "Single Reel Package — ₹1,999": {
     name: "Single Reel Package",
     price: 1999,
     badge: "",
@@ -23,7 +23,7 @@ const PACKAGES = {
       "Crewshoot Watermark"
     ]
   },
-  "Double Reel Package — ₹4,999 +GST ⭐ Most Popular": {
+  "Double Reel Package — ₹4,999 ⭐ Most Popular": {
     name: "Double Reel Package",
     price: 4999,
     badge: "POPULAR",
@@ -37,7 +37,7 @@ const PACKAGES = {
     ],
     note: "Includes 2 free minor revisions"
   },
-  "Event Starter — ₹9,999 +GST": {
+  "Event Starter — ₹9,999": {
     name: "Event Starter",
     price: 9999,
     badge: "",
@@ -51,7 +51,7 @@ const PACKAGES = {
       "Raw Footage Access"
     ]
   },
-  "Event Pro — ₹14,999 +GST": {
+  "Event Pro — ₹14,999": {
     name: "Event Pro",
     price: 14999,
     badge: "",
@@ -65,7 +65,7 @@ const PACKAGES = {
       "Raw Footage Access"
     ]
   },
-  "Wedding Starter — ₹14,999 +GST": {
+  "Wedding Starter — ₹14,999": {
     name: "Wedding Starter",
     price: 14999,
     badge: "",
@@ -78,7 +78,7 @@ const PACKAGES = {
       "Raw Footage Access"
     ]
   },
-  "Wedding Classic — ₹39,999 +GST ⭐ Most Popular": {
+  "Wedding Classic — ₹39,999 ⭐ Most Popular": {
     name: "Wedding Classic",
     price: 39999,
     badge: "POPULAR",
@@ -91,7 +91,7 @@ const PACKAGES = {
       "Raw Footage Access"
     ]
   },
-  "Wedding Premium — ₹49,999 +GST 🏆 Best Seller": {
+  "Wedding Premium — ₹49,999 🏆 Best Seller": {
     name: "Wedding Premium",
     price: 49999,
     badge: "BEST SELLER",
@@ -105,7 +105,7 @@ const PACKAGES = {
       "Raw Footage Access"
     ]
   },
-  "Wedding Signature — ₹74,999 +GST": {
+  "Wedding Signature — ₹74,999": {
     name: "Wedding Signature",
     price: 74999,
     badge: "",
@@ -170,10 +170,9 @@ export default function BookingForm({
     const selectedAddOns = ADD_ONS.filter(a => formData.addOns.includes(a.id));
     selectedAddOns.forEach(a => subtotal += a.price);
     
-    const gst = Math.round(subtotal * 0.18);
-    const total = subtotal + gst;
+    const total = subtotal;
     
-    return { subtotal, gst, total, selectedAddOns };
+    return { subtotal, total, selectedAddOns };
   }, [formData.package, formData.addOns, selectedPackageData]);
 
   // Auto-expand summary when required fields are filled
@@ -266,7 +265,7 @@ I'd like to book an instant reel shoot.
 📍 Location: ${formData.location}
 ✨ Add-ons: ${totals.selectedAddOns.map(a => a.name).join(", ") || 'None'}
 📝 Notes: ${formData.notes || 'None'}
-💰 Estimated Total: ₹${totals.total.toLocaleString()} +GST
+💰 Estimated Total: ₹${totals.total.toLocaleString()}
 
 Please confirm my booking. Thank you!`;
 
@@ -372,18 +371,18 @@ Please confirm my booking. Thank you!`;
             >
               <option value="" disabled>Choose your package</option>
               <optgroup label="── 🎬 Reel Packages ──">
-                <option value="Single Reel Package — ₹1,999 +GST">Single Reel Package — ₹1,999 +GST</option>
-                <option value="Double Reel Package — ₹4,999 +GST ⭐ Most Popular">Double Reel Package — ₹4,999 +GST ⭐ Most Popular</option>
+                <option value="Single Reel Package — ₹1,999">Single Reel Package — ₹1,999</option>
+                <option value="Double Reel Package — ₹4,999 ⭐ Most Popular">Double Reel Package — ₹4,999 ⭐ Most Popular</option>
               </optgroup>
               <optgroup label="── 🎉 Event Packages ──">
-                <option value="Event Starter — ₹9,999 +GST">Event Starter — ₹9,999 +GST</option>
-                <option value="Event Pro — ₹14,999 +GST">Event Pro — ₹14,999 +GST</option>
+                <option value="Event Starter — ₹9,999">Event Starter — ₹9,999</option>
+                <option value="Event Pro — ₹14,999">Event Pro — ₹14,999</option>
               </optgroup>
               <optgroup label="── 💍 Wedding Packages ──">
-                <option value="Wedding Starter — ₹14,999 +GST">Wedding Starter — ₹14,999 +GST</option>
-                <option value="Wedding Classic — ₹39,999 +GST ⭐ Most Popular">Wedding Classic — ₹39,999 +GST ⭐ Most Popular</option>
-                <option value="Wedding Premium — ₹49,999 +GST 🏆 Best Seller">Wedding Premium — ₹49,999 +GST 🏆 Best Seller</option>
-                <option value="Wedding Signature — ₹74,999 +GST">Wedding Signature — ₹74,999 +GST</option>
+                <option value="Wedding Starter — ₹14,999">Wedding Starter — ₹14,999</option>
+                <option value="Wedding Classic — ₹39,999 ⭐ Most Popular">Wedding Classic — ₹39,999 ⭐ Most Popular</option>
+                <option value="Wedding Premium — ₹49,999 🏆 Best Seller">Wedding Premium — ₹49,999 🏆 Best Seller</option>
+                <option value="Wedding Signature — ₹74,999">Wedding Signature — ₹74,999</option>
               </optgroup>
               <optgroup label="── ❓ Not Sure ──">
                 <option value="Help me choose the right package">Help me choose the right package</option>
@@ -413,7 +412,7 @@ Please confirm my booking. Thank you!`;
                       {selectedPackageData.price > 0 && (
                         <p className="text-[#f5a623] font-bold text-lg leading-none mt-1.5 flex items-baseline gap-1">
                           ₹{selectedPackageData.price.toLocaleString()} 
-                          <span className="text-[10px] font-normal opacity-60">+GST</span>
+                          
                         </p>
                       )}
                     </div>
@@ -574,10 +573,7 @@ Please confirm my booking. Thank you!`;
                  <span>Subtotal</span>
                  <span className="font-bold">₹{totals.subtotal.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between items-center text-[12px] text-white/30 font-dm-sans">
-                 <span>GST (18%)</span>
-                 <span className="font-bold">₹{totals.gst.toLocaleString()}</span>
-              </div>
+              
               <div className="flex justify-between items-center pt-4 border-t border-white/5">
                  <span className="text-xl font-heading font-black text-white italic tracking-tighter uppercase">Total Estimate</span>
                  <div className="text-right">
@@ -589,7 +585,7 @@ Please confirm my booking. Thank you!`;
                     >
                       ₹{totals.total.toLocaleString()}
                     </motion.div>
-                    <span className="text-[10px] font-black uppercase text-white/20 tracking-widest">+ 18% GST</span>
+                    
                  </div>
               </div>
            </div>
@@ -691,7 +687,7 @@ Please confirm my booking. Thank you!`;
                       </div>
                     ))}
                     <div className="border-t border-[#f5a623]/20 pt-5 mt-4 flex justify-between items-center">
-                       <span className="text-sm font-heading font-black uppercase italic text-[#f5a623]">Estimated Total (Incl. GST)</span>
+                       <span className="text-sm font-heading font-black uppercase italic text-[#f5a623]">Estimated Total</span>
                        <span className="text-2xl font-heading font-black text-white italic tracking-tighter shadow-sm">₹{totals.total.toLocaleString()}</span>
                     </div>
                   </div>
