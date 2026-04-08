@@ -210,26 +210,29 @@ export default function BookingForm({
     setIsSubmitting(true);
 
     try {
-      // 1. Save to Supabase
-      const { error } = await supabase
-        .from("bookings")
-        .insert([{ 
-          name: formData.name,
-          mobile: formData.mobile,
-          eventtype: formData.eventType,
-          packagename: selectedPackageData?.name || formData.package,
-          packageprice: selectedPackageData?.price || 0,
-          eventdate: formData.eventDate,
-          eventtime: formData.eventTime,
-          location: formData.location,
-          addons: totals.selectedAddOns.map(a => a.name),
-          notes: formData.notes,
-          totalestimate: totals.total,
-          referral_name: formData.referralName,
-          created_at: new Date().toISOString()
-        }]);
-
-      if (error) throw error;
+      // 1. Save to Supabase (non-blocking — booking continues even if DB fails)
+      try {
+        const { error } = await supabase
+          .from("bookings")
+          .insert([{ 
+            name: formData.name,
+            mobile: formData.mobile,
+            eventtype: formData.eventType,
+            packagename: selectedPackageData?.name || formData.package,
+            packageprice: selectedPackageData?.price || 0,
+            eventdate: formData.eventDate,
+            eventtime: formData.eventTime,
+            location: formData.location,
+            addons: totals.selectedAddOns.map(a => a.name),
+            notes: formData.notes,
+            totalestimate: totals.total,
+            referral_name: formData.referralName,
+            created_at: new Date().toISOString()
+          }]);
+        if (error) console.warn("Supabase insert warning:", error.message);
+      } catch (dbErr) {
+        console.warn("Supabase unavailable, continuing with WhatsApp:", dbErr);
+      }
 
       // 2. Send via EmailJS (Commented until keys are provided)
       /*

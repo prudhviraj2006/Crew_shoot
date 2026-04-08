@@ -11,21 +11,21 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center group w-fit">
-            <Logo className="w-16 h-16" />
+            <Logo className="w-10 h-10" />
           </Link>
-          
+
           <p className="text-white/60 text-base max-w-xs leading-relaxed">
             Instant content, zero hassle. <br />
             Shot. Edited. Delivered — before your event ends.
           </p>
 
           <div className="flex gap-4">
-             <a href="https://instagram.com/crewshoot.in" target="_blank" rel="noreferrer" className="bg-white/5 p-3 rounded-full hover:bg-accent hover:text-black transition-all">
-                <Instagram size={20} />
-             </a>
-             <a href="mailto:crewshoot25@gmail.com" className="bg-white/5 p-3 rounded-full hover:bg-accent hover:text-black transition-all">
-                <Mail size={20} />
-             </a>
+            <a href="https://instagram.com/crewshoot.in" target="_blank" rel="noreferrer" className="bg-white/5 p-3 rounded-full hover:bg-accent hover:text-black transition-all">
+              <Instagram size={20} />
+            </a>
+            <a href="mailto:crewshoot25@gmail.com" className="bg-white/5 p-3 rounded-full hover:bg-accent hover:text-black transition-all">
+              <Mail size={20} />
+            </a>
           </div>
         </div>
 
