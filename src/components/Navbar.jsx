@@ -48,7 +48,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center w-full bg-transparent !border-none !p-0 h-[46px] md:h-[56px]">
           <Link href="/" className="flex items-center shrink-0">
-            <Logo className="block object-contain w-full h-auto w-[70px] md:w-[70px] h-auto object-contain" />
+            <Logo className="w-[50px] md:w-[80px] h-auto object-contain" />
           </Link>
 
           {/* Desktop Nav Links */}
