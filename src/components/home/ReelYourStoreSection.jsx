@@ -4,6 +4,21 @@ import Link from "next/link";
 import { CheckCircle2, ChevronRight, Store, Shirt, Utensils, Car, LayoutDashboard, Dumbbell, Home, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 
+const bookOnWhatsApp = (packageName, price, features) => {
+  const msg = `Hey Crewshoot! 👋
+
+I'm interested in booking the *Reel Your Store* package.
+
+📦 Package: *${packageName}*
+💰 Price: *${price} + GST*
+
+✅ Includes:
+${features.map(f => `• ${f}`).join('\n')}
+
+Please confirm my booking. Thank you!`;
+  window.open(`https://wa.me/919360331912?text=${encodeURIComponent(msg)}`, '_blank');
+};
+
 export default function ReelYourStoreSection() {
   const pills = [
     { icon: <Shirt size={12} />, label: "Clothing" },
@@ -51,13 +66,12 @@ export default function ReelYourStoreSection() {
               ))}
             </ul>
 
-            <Link 
-              href="https://wa.me/919360331912?text=Hey%20Crewshoot!%20I'm%20interested%20in%20the%20Reel%20Your%20Store%20package."
-              target="_blank"
+            <button 
+              onClick={() => bookOnWhatsApp('5 Reels Package', '₹9,999', ['5 Professional Reels', 'Shot on iPhone', 'Instant Delivery', '2 Revisions Per Reel', 'Ready to Post'])}
               className="bg-white/10 hover:bg-white/20 text-white w-full py-4 rounded-xl font-black uppercase text-sm tracking-widest text-center transition-all"
             >
               Book Now
-            </Link>
+            </button>
           </motion.div>
 
           {/* Card 2 */}
@@ -81,13 +95,12 @@ export default function ReelYourStoreSection() {
               ))}
             </ul>
 
-            <Link 
-               href="https://wa.me/919360331912?text=Hey%20Crewshoot!%20I'm%20interested%20in%20the%20Reel%20Your%20Store%20package."
-               target="_blank"
-               className="bg-[#f5a623] hover:bg-white text-black w-full py-4 rounded-xl font-black uppercase text-sm tracking-widest text-center transition-all shadow-xl"
+            <button 
+              onClick={() => bookOnWhatsApp('10 Reels Package', '₹18,999', ['10 Professional Reels', 'Advanced Editing', 'Shot on iPhone', '2 Revisions Per Reel', 'Branding Strategy', 'Ready to Post'])}
+              className="bg-[#f5a623] hover:bg-white text-black w-full py-4 rounded-xl font-black uppercase text-sm tracking-widest text-center transition-all shadow-xl"
             >
               Book Now
-            </Link>
+            </button>
           </motion.div>
         </div>
 
