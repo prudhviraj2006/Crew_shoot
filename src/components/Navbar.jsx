@@ -46,9 +46,9 @@ export default function Navbar() {
           isScrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.5)]" : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center w-full bg-transparent !border-none !p-0 h-[46px] md:h-[56px]">
-          <Link href="/" className="flex items-center shrink-0">
-            <Logo className="w-[50px] md:w-[80px] h-auto object-contain" />
+        <div className="max-w-7xl mx-auto flex justify-between items-center w-full bg-transparent !border-none !p-0 md:h-[56px]">
+          <Link href="/" className="flex items-center group flex-shrink-0">
+            <Logo className="block object-contain w-[110px] h-[110px] md:w-[70px] md:h-auto" />
           </Link>
 
           {/* Desktop Nav Links */}
