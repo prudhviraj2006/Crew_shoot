@@ -5,7 +5,7 @@ const Logo = ({ className = "" }) => {
     <img 
       src="/logo.png" 
       alt="CrewShoot Logo" 
-      className={`block object-contain w-full h-auto ${className}`}
+      className={`block object-contain ${className}`}
     />
   );
 };
