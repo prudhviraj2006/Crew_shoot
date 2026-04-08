@@ -16,7 +16,7 @@ I'm interested in booking the *Reel Your Store* package.
 ${features.map(f => `• ${f}`).join('\n')}
 
 Please confirm my booking. Thank you!`;
-  window.open(`https://wa.me/919360331912?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(`https://wa.me/916281998732?text=${encodeURIComponent(msg)}`, '_blank');
 };
 
 export default function ReelYourStoreSection() {
