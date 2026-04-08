@@ -34,7 +34,7 @@ export default function TestimonialCarousel() {
         <p className="text-white/40 text-lg font-medium tracking-tight">Real-time reactions from our satisfied customers.</p>
       </div>
 
-      <div className="flex flex-col gap-10 relative group">
+      <div className="hidden md:flex flex-col gap-10 relative group">
         <div className="absolute top-0 left-0 w-64 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-64 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none"></div>
 

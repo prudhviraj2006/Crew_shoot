@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { supabase } from "@/lib/supabase";
+import confetti from "canvas-confetti";
 
 const PACKAGES = {
   "Single Reel Package — ₹1,999": {
@@ -155,7 +156,8 @@ export default function BookingForm({
     location: "",
     addOns: [], // Array of IDs
     notes: "",
-    source: ""
+    source: "",
+    referralName: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -223,6 +225,7 @@ export default function BookingForm({
           addons: totals.selectedAddOns.map(a => a.name),
           notes: formData.notes,
           totalestimate: totals.total,
+          referral_name: formData.referralName,
           created_at: new Date().toISOString()
         }]);
 
@@ -246,6 +249,7 @@ export default function BookingForm({
           notes: formData.notes || "None",
           total_estimate: totals.total,
           source: formData.source || "Not specified",
+          referral_name: formData.referralName || "None",
         },
         "public_key_xxxx"
       );
@@ -253,6 +257,12 @@ export default function BookingForm({
 
       // Redirect Logic
       setShowSuccess(true);
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#f5a623', '#ffffff', '#000000']
+      });
       
       const waMsg = `Hey Crewshoot! 👋
 My name is ${formData.name}.
@@ -265,6 +275,7 @@ I'd like to book an instant reel shoot.
 📍 Location: ${formData.location}
 ✨ Add-ons: ${totals.selectedAddOns.map(a => a.name).join(", ") || 'None'}
 📝 Notes: ${formData.notes || 'None'}
+👥 Referral: ${formData.referralName || 'None'}
 💰 Estimated Total: ₹${totals.total.toLocaleString()}
 
 Please confirm my booking. Thank you!`;
@@ -622,22 +633,40 @@ Please confirm my booking. Thank you!`;
         </div>
 
         {/* Field 10: Heard From */}
-        <div>
-          <label className={labelStyle}>How did you hear about us? <span className="text-white/20 not-italic">(optional)</span></label>
-          <select 
-            className={inputStyle('source')}
-            value={formData.source}
-            onChange={(e) => setFormData({...formData, source: e.target.value})}
-          >
-            <option value="">Select an option</option>
-            <option value="Instagram (@crewshoot.in)">📸 Instagram (@crewshoot.in)</option>
-            <option value="WhatsApp">💬 WhatsApp</option>
-            <option value="Friend / Family Referral">👥 Friend / Family Referral</option>
-            <option value="Google Search">🔍 Google Search</option>
-            <option value="Saw at an Event">📍 Saw at an Event</option>
-            <option value="Saw a Reel Online">🎬 Saw a Reel Online</option>
-            <option value="Other">Other</option>
-          </select>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className={labelStyle}>How did you hear about us? <span className="text-white/20 not-italic">(optional)</span></label>
+            <select 
+              className={inputStyle('source')}
+              value={formData.source}
+              onChange={(e) => setFormData({...formData, source: e.target.value})}
+            >
+              <option value="">Select an option</option>
+              <option value="Instagram (@crewshoot.in)">📸 Instagram (@crewshoot.in)</option>
+              <option value="WhatsApp">💬 WhatsApp</option>
+              <option value="Friend / Family Referral">👥 Friend / Family Referral</option>
+              <option value="Google Search">🔍 Google Search</option>
+              <option value="Saw at an Event">📍 Saw at an Event</option>
+              <option value="Saw a Reel Online">🎬 Saw a Reel Online</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+             <label className={labelStyle}>Were you referred by someone? <span className="text-white/20 not-italic">(optional)</span></label>
+             <div className="relative group">
+                <input 
+                  type="text"
+                  placeholder="e.g. Ravi Kumar, @instagram_handle"
+                  maxLength={100}
+                  className={`${inputStyle('referralName')}`}
+                  value={formData.referralName}
+                  onChange={(e) => setFormData({...formData, referralName: e.target.value})}
+                />
+             </div>
+             <p className="text-[10px] text-white/30 font-dm-sans mt-2 ml-1 italic leading-relaxed">
+               If a friend or creator referred you, enter their name here.
+             </p>
+          </div>
         </div>
 
         {/* Form Summary Preview */}
@@ -679,6 +708,7 @@ Please confirm my booking. Thank you!`;
                       { label: "⏰ Time", value: formData.eventTime ? formData.eventTime.split('—')[0].trim() : "—" },
                       { label: "📍 Location", value: formData.location || "—" },
                       { label: "✨ Add-ons", value: totals.selectedAddOns.map(a => a.name).join(", ") || "None" },
+                      { label: "👥 Referral", value: formData.referralName || "None" },
                       { label: "📝 Notes", value: formData.notes ? (formData.notes.substring(0, 60) + (formData.notes.length > 60 ? "..." : "")) : "None" }
                     ].map((item, idx) => (
                       <div key={idx} className="flex justify-between items-start text-[12px] group py-1 border-b border-white/[0.03] last:border-0 pb-1.5 mb-1">

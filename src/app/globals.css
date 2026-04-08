@@ -29,27 +29,33 @@
 
 /* Mobile Responsiveness Overrides */
 @media (max-width: 768px) {
+  /* Prevent elements from exceeding viewport */
+  * {
+    max-width: 100% !important;
+  }
+
   /* 1. Layout & Overflow */
   body, html {
     overflow-x: hidden !important;
     width: 100% !important;
-    max-width: 100vw !important;
   }
   
   section, footer, header {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding: 0 16px !important;
     box-sizing: border-box !important;
+    overflow-x: hidden !important;
   }
 
   /* 2. Typography */
-  h1, h2, h3, h4, h5, h6, .text-5xl, .text-6xl, .text-7xl, .text-8xl, .text-4xl {
-    font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
-    line-height: 1.2 !important;
+  h1, h2, h3, h4, h5, h6, p, span, a, div, .text-5xl, .text-6xl, .text-7xl, .text-8xl, .text-4xl {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
     white-space: normal !important;
-    word-break: break-word !important;
+  }
+
+  h1, h2 {
+    font-size: clamp(20px, 5vw, 32px) !important;
+    line-height: 1.2 !important;
   }
   
   /* 3. Cards / Sections */
@@ -60,7 +66,68 @@
   
   /* Uniform spacing & reduce excessive padding inside cards */
   .p-10, .p-14, .p-8 {
-    padding: 1.5rem !important; /* 24px */
+    padding: 16px !important; /* 16px */
+  }
+
+  /* Ensure cards fit screen */
+  .card, [class*="card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 16px !important;
+  }
+
+  /* TOP BADGE FIX */
+  .top-badge, .badge, [class*="badge"] {
+    max-width: 100% !important;
+    width: fit-content !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    line-height: 1.2 !important;
+  }
+
+  .top-badge span, .badge span, [class*="badge"] span {
+    display: inline-block !important;
+    word-break: break-word !important;
+  }
+
+  /* REMOVE GLOWING LINE (MOBILE ONLY) */
+  .divider,
+  .yellow-line,
+  .glow-line,
+  hr {
+    display: none !important;
+  }
+
+  .card::before,
+  .card::after,
+  [class*="card"]::before,
+  [class*="card"]::after {
+    display: none !important;
+  }
+
+  /* PROCESS STEP YELLOW LINE FIX */
+  .step-number,
+  .process-step-num,
+  [class*="step"] span,
+  [class*="process"] .number {
+    border-bottom: none !important;
+  }
+
+  .step-num::after,
+  .process-step-num::after,
+  [class*="process"] .number::after {
+    display: none !important;
+  }
+
+  .step-divider,
+  .step-line,
+  .process-line,
+  .number-underline {
+    display: none !important;
   }
   
   /* 4. Buttons */

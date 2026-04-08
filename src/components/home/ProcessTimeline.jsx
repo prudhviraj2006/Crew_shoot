@@ -45,8 +45,7 @@ export default function ProcessTimeline() {
               <div className="md:w-1/2 w-full flex">
                 <div className={`w-full bg-[#111] border border-white/5 p-10 rounded-[2.5rem] relative ml-12 md:ml-0 md:mx-12 group hover:border-accent/30 transition-all duration-500 shadow-2xl ${i % 2 === 0 ? "md:mr-12 md:ml-0 text-right md:items-end flex flex-col" : "md:ml-12 md:mr-0 text-left md:items-start flex flex-col"}`}>
                   
-                  {/* Mobile nav point */}
-                  <div className="md:hidden absolute -left-12 top-10 w-4 h-4 rounded-full bg-accent border-[3px] border-background z-10 shadow-[0_0_15px_rgba(245,166,35,0.6)]"></div>
+                  {/* Mobile nav point removed */}
                   
                   <span className={`text-8xl font-heading font-black text-white/[0.02] absolute -top-8 ${i % 2 === 0 ? "-left-4" : "-right-4"} pointer-events-none select-none italic group-hover:text-accent/[0.03] transition-colors`}>
                     {step.num}
@@ -54,7 +53,7 @@ export default function ProcessTimeline() {
 
                   <div className={`flex items-center gap-4 mb-6 ${i % 2 === 0 ? "flex-row-reverse" : "flex-row"}`}>
                     <span className="text-accent font-heading font-black italic tracking-tighter text-2xl">{step.num}</span> 
-                    <div className="w-12 h-[1px] bg-white/10 group-hover:bg-accent/30 transition-colors"></div>
+                    <div className="hidden md:block w-12 h-[1px] bg-white/10 group-hover:bg-accent/30 transition-colors"></div>
                   </div>
 
                   <h3 className="text-3xl font-black font-heading mb-4 uppercase italic tracking-tighter text-white/90 group-hover:text-white transition-colors">

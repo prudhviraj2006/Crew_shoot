@@ -35,11 +35,11 @@ export default function Footer() {
             <h4 className="text-white font-heading font-bold text-lg mb-6 uppercase tracking-wider">Explore</h4>
             <ul className="flex flex-col gap-4 text-white/50 text-sm">
               <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-              <li><Link href="/services" className="hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
+              <li><Link href="/reels" className="hover:text-accent transition-colors">Instant Reels</Link></li>
+              <li><Link href="/events" className="hover:text-accent transition-colors">Event Reels</Link></li>
+              <li><Link href="/weddings" className="hover:text-accent transition-colors">Wedding Reels</Link></li>
+              <li><Link href="/store" className="hover:text-accent transition-colors">Reel Your Store</Link></li>
               <li><Link href="/reviews" className="hover:text-accent transition-colors">Reviews</Link></li>
-              <li><Link href="/#process" className="hover:text-accent transition-colors">Process</Link></li>
-              <li><Link href="/#testimonials" className="hover:text-accent transition-colors">Testimonials</Link></li>
               <li><Link href="/become-a-creator" className="hover:text-accent transition-colors">Become a Creator</Link></li>
             </ul>
           </div>

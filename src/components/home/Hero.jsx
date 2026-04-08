@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Play } from "lucide-react";
 
@@ -91,27 +91,54 @@ import BookingModal from "@/components/BookingModal";
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    // Keep intro visible for 1.2s then fade out
+    const timer = setTimeout(() => setShowIntro(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex flex-col justify-center overflow-hidden">
+      <AnimatePresence>
+        {showIntro && (
+          <motion.div 
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="fixed inset-0 bg-[#0d0d0d] z-[200] flex items-center justify-center pointer-events-auto"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative flex items-center justify-center"
+            >
+               <div className="absolute inset-0 bg-[#f5a623]/20 blur-[60px] rounded-full w-full h-full scale-150"></div>
+               <img src="/logo.png" alt="Crewshoot" className="w-[90px] md:w-[120px] h-auto object-contain relative z-10" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <section className="pt-10 md:pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex flex-col justify-center overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="flex-1 relative z-10">
             <TypewriterText />
 
             <motion.h1
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               className="text-6xl md:text-7xl lg:text-8xl font-heading font-black leading-[0.9] mb-8 uppercase italic tracking-tighter saturate-150"
             >
               Tirupati's <span className="text-accent underline decoration-white/10 underline-offset-[12px]">First & Fastest</span> Instant Reel Service
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
               className="text-2xl md:text-3xl text-white/50 font-medium mb-12 italic tracking-tight"
             >
               Shoot, Edit, Deliver in Minutes!
@@ -120,15 +147,17 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
               className="flex flex-wrap items-center gap-6"
             >
-              <button
+              <motion.button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-accent hover:bg-white text-black font-black uppercase text-sm tracking-widest px-10 py-5 rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_40px_rgba(245,166,35,0.2)] italic"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="bg-accent hover:bg-white text-black font-black uppercase text-sm tracking-widest px-10 py-5 rounded-2xl transition-colors shadow-[0_20px_40px_rgba(245,166,35,0.2)] italic"
               >
                 Book Now ★
-              </button>
+              </motion.button>
               <Link
                 href="/become-a-creator"
                 className="bg-white/5 border border-white/10 hover:border-accent hover:text-accent text-white font-black uppercase text-sm tracking-widest px-10 py-5 rounded-2xl transition-all hover:scale-105 active:scale-95 italic"
