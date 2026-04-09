@@ -1,3 +1,4 @@
+// CREWSHOOT - ORIGINAL STABLE VERSION
 import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
