@@ -44,7 +44,7 @@ export default function TermsPage() {
       content: (
         <ul className="list-disc pl-5 space-y-3 font-light text-[#ccc]/80">
           <li>All bookings are confirmed only after receiving acknowledgement from Crewshoot via WhatsApp or email.</li>
-          <li>Booking via the website form or WhatsApp to +91 93603 31912 constitutes an offer.</li>
+          <li>Booking via the website form or WhatsApp to +91 62819 98732 constitutes an offer.</li>
           <li>Crewshoot reserves the right to accept or decline any booking request.</li>
           <li>Slot availability is not guaranteed until written confirmation is received.</li>
           <li>Clients must provide accurate event details including date, time, location, and type.</li>
@@ -185,7 +185,7 @@ export default function TermsPage() {
         <p>
           For any questions regarding these Terms:
           <br />📧 crewshoot25@gmail.com
-          <br />📱 +91 93603 31912 (WhatsApp)
+          <br />📱 +91 62819 98732 (WhatsApp)
           <br />🌐 www.crewshoot.in
           <br />📍 Tirupati, Andhra Pradesh
         </p>

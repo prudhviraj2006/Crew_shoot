@@ -46,7 +46,7 @@ export default function CancellationPage() {
           <HighlightBox>
             All cancellation requests must be sent to:
             <br />📧 crewshoot25@gmail.com
-            <br />📱 WhatsApp: +91 93603 31912
+            <br />📱 WhatsApp: +91 62819 98732
           </HighlightBox>
         </>
       ),
@@ -195,7 +195,7 @@ export default function CancellationPage() {
         <p>
           For cancellation, refund, or rescheduling:
           <br />📧 crewshoot25@gmail.com
-          <br />📱 +91 93603 31912 (WhatsApp)
+          <br />📱 +91 62819 98732 (WhatsApp)
           <br />🌐 www.crewshoot.in
         </p>
       ),

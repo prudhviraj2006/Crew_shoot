@@ -1,0 +1,28 @@
+export default function sitemap() {
+  return [
+    { url: 'https://www.crewshoot.in',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/pricing',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/services',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/reels',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/events',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/weddings',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/store',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/reviews',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/become-a-creator',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/terms',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/privacy',
+      lastModified: new Date() },
+    { url: 'https://www.crewshoot.in/cancellation',
+      lastModified: new Date() },
+  ]
+}

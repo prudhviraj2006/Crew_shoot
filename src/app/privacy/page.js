@@ -89,7 +89,7 @@ export default function PrivacyPage() {
       title: "4. WhatsApp Communication",
       content: (
         <p>
-          By submitting a booking form, you consent to receiving WhatsApp messages from +91 93603 31912 regarding your booking, delivery updates, and follow-ups. You may opt out at any time by messaging "STOP" to our WhatsApp number.
+          By submitting a booking form, you consent to receiving WhatsApp messages from +91 62819 98732 regarding your booking, delivery updates, and follow-ups. You may opt out at any time by messaging "STOP" to our WhatsApp number.
         </p>
       ),
     },
@@ -186,7 +186,7 @@ export default function PrivacyPage() {
         <p>
           For any privacy-related queries:
           <br />📧 crewshoot25@gmail.com
-          <br />📱 +91 93603 31912 (WhatsApp)
+          <br />📱 +91 62819 98732 (WhatsApp)
           <br />🌐 www.crewshoot.in
         </p>
       ),

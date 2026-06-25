@@ -102,14 +102,16 @@ export default function Navbar() {
 
           {/* Right Side Items */}
           <div className="flex items-center gap-3 md:gap-8 shrink-0">
-            <button 
-              onClick={() => setIsModalOpen(true)}
+            <a 
+              href="https://wa.me/916281998732?text=Hey%20Crewshoot!%20I%20want%20to%20book%20an%20instant%20reel!"
+              target="_blank"
+              rel="noreferrer"
               className="hidden md:block bg-[#f5a623] text-[#0d0d0d] font-[800] uppercase rounded-full px-[14px] py-[6px] text-[12px] md:px-[24px] md:py-[10px] md:text-[13px] transition-all hover:scale-105 active:scale-95 shadow-[0_10px_20px_rgba(245,166,35,0.2)] shrink-0 whitespace-nowrap"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
               Book
               <span className="hidden sm:inline"> Now</span>
-            </button>
+            </a>
             <div className="md:hidden flex items-center shrink-0">
               <button onClick={() => setIsOpen(!isOpen)} className="text-foreground hover:text-[#f5a623] p-1 flex items-center justify-center">
                 {isOpen ? <X size={26} /> : <Menu size={26} />}

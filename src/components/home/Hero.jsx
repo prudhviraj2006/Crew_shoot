@@ -150,14 +150,16 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 1.2 }}
               className="flex flex-wrap items-center gap-6"
             >
-              <motion.button
-                onClick={() => setIsModalOpen(true)}
+               <motion.a
+                href="https://wa.me/916281998732?text=Hey%20Crewshoot!%20I%20want%20to%20book%20an%20instant%20reel!"
+                target="_blank"
+                rel="noreferrer"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="bg-accent hover:bg-white text-black font-black uppercase text-sm tracking-widest px-10 py-5 rounded-2xl transition-colors shadow-[0_20px_40px_rgba(245,166,35,0.2)] italic"
+                className="bg-accent hover:bg-white text-black font-black uppercase text-sm tracking-widest px-10 py-5 rounded-2xl transition-colors shadow-[0_20px_40px_rgba(245,166,35,0.2)] italic flex items-center justify-center"
               >
                 Book Now ★
-              </motion.button>
+              </motion.a>
               <Link
                 href="/become-a-creator"
                 className="bg-white/5 border border-white/10 hover:border-accent hover:text-accent text-white font-black uppercase text-sm tracking-widest px-10 py-5 rounded-2xl transition-all hover:scale-105 active:scale-95 italic"

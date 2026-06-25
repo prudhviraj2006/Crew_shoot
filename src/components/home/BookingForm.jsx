@@ -11,113 +11,101 @@ import { supabase } from "@/lib/supabase";
 import confetti from "canvas-confetti";
 
 const PACKAGES = {
-  "Single Reel Package — ₹1,999": {
-    name: "Single Reel Package",
-    price: 1999,
+  "Crewshoot Edition — 1 Reel — ₹1,899": {
+    name: "Crewshoot Edition 1 Reel",
+    price: 1899,
     badge: "",
     details: [
-      "1 Hour Shoot",
-      "1 Cinematic Reel",
-      "Shot on iPhone",
-      "Instant Reel Delivery",
-      "2 Minor Revisions Included",
-      "Crewshoot Watermark"
+      "1 Instant Reel (Up to 60 Seconds)",
+      "Dedicated Reel Maker Assigned",
+      "Up to 1 Hour Coverage",
+      "Shot on iPhone | Edited On-Site",
+      "Delivered During the Event",
+      "Crewshoot Branding Included",
+      "High-Quality Visuals"
     ]
   },
-  "Double Reel Package — ₹4,999 ⭐ Most Popular": {
-    name: "Double Reel Package",
+  "Crewshoot Edition — 2 Reels — ₹3,899 🔥": {
+    name: "Crewshoot Edition 2 Reels",
+    price: 3899,
+    badge: "POPULAR",
+    details: [
+      "2 Instant Reels (Up to 60 Seconds Each)",
+      "Dedicated Reel Maker Assigned",
+      "Up to 3 Hours Coverage",
+      "Shot on iPhone | Edited On-Site",
+      "Delivered During the Event",
+      "Crewshoot Branding Included",
+      "High-Quality Visuals"
+    ]
+  },
+  "Premium Edition — 1 Reel — ₹2,499": {
+    name: "Premium Edition 1 Reel",
+    price: 2499,
+    badge: "",
+    details: [
+      "1 Instant Reel (Up to 60 Seconds)",
+      "Dedicated Reel Maker Assigned",
+      "Up to 1 Hour Coverage",
+      "Shot on iPhone | Edited On-Site",
+      "Delivered During the Event",
+      "No Crewshoot Branding (Clean Reel)",
+      "High-Quality Visuals"
+    ]
+  },
+  "Premium Edition — 2 Reels — ₹4,999": {
+    name: "Premium Edition 2 Reels",
     price: 4999,
-    badge: "POPULAR",
-    details: [
-      "Up to 3 Hours Shoot",
-      "2 Cinematic Reels",
-      "Shot on iPhone",
-      "Instant Reel Preview",
-      "2 Minor Revisions Per Reel",
-      "Crewshoot Watermark"
-    ],
-    note: "Includes 2 free minor revisions"
-  },
-  "Event Starter — ₹9,999": {
-    name: "Event Starter",
-    price: 9999,
     badge: "",
     details: [
-      "Up to 6 Hours Coverage",
-      "3 Reels Delivered",
+      "2 Instant Reels (Up to 60 Seconds Each)",
+      "Dedicated Reel Maker Assigned",
+      "Up to 3 Hours Coverage",
+      "Shot on iPhone | Edited On-Site",
+      "Delivered During the Event",
+      "No Crewshoot Branding (Clean Reel)",
+      "High-Quality Visuals"
+    ]
+  },
+  "Wedding Starter — 3 Reels — ₹8,999": {
+    name: "Wedding Starter 3 Reels",
+    price: 8999,
+    badge: "",
+    details: [
+      "3 Instant Wedding Reels",
+      "Bride & Groom Highlights",
+      "Family Reactions & Candid Moments",
+      "Shot on iPhone | Edited On-Site",
+      "Delivered During the Event",
+      "2 Minor Revisions Per Reel"
+    ]
+  },
+  "Wedding Gold — 6 Reels — ₹14,999 ⭐": {
+    name: "Wedding Gold 6 Reels",
+    price: 14999,
+    badge: "MOST BOOKED",
+    details: [
+      "6 Instant Wedding Reels",
+      "Entry Reel + Couple Highlights",
+      "Family Reactions + Candid Moments",
       "BTS Clips",
-      "Crowd Interaction Clips",
-      "Instant Reel Delivery",
-      "2 Minor Revisions Per Reel",
-      "Raw Footage Access"
+      "Shot on iPhone | Edited On-Site",
+      "Delivered During the Event",
+      "2 Minor Revisions Per Reel"
     ]
   },
-  "Event Pro — ₹14,999": {
-    name: "Event Pro",
-    price: 14999,
+  "Premium Wedding — 10 Reels — ₹24,999": {
+    name: "Premium Wedding 10 Reels",
+    price: 24999,
     badge: "",
     details: [
-      "Up to 6 Hours Coverage",
-      "5 Reels Delivered",
-      "Up to 2 Reel Makers Onsite",
-      "BTS Coverage",
-      "Live Instagram Stories",
-      "2 Minor Revisions Per Reel",
-      "Raw Footage Access"
-    ]
-  },
-  "Wedding Starter — ₹14,999": {
-    name: "Wedding Starter",
-    price: 14999,
-    badge: "",
-    details: [
-      "1 Event (up to 6 hours)",
-      "4 Cinematic Reels",
-      "Same Day Preview",
-      "2 Minor Revisions Per Reel",
-      "Crewshoot Watermark",
-      "Raw Footage Access"
-    ]
-  },
-  "Wedding Classic — ₹39,999 ⭐ Most Popular": {
-    name: "Wedding Classic",
-    price: 39999,
-    badge: "POPULAR",
-    details: [
-      "3 Events Covered",
-      "12 Reels Delivered",
-      "Up to 2 Reel Makers Onsite",
-      "Same Day Previews",
-      "2 Minor Revisions Per Reel",
-      "Raw Footage Access"
-    ]
-  },
-  "Wedding Premium — ₹49,999 🏆 Best Seller": {
-    name: "Wedding Premium",
-    price: 49999,
-    badge: "BEST SELLER",
-    details: [
-      "4 Events Covered",
-      "15 Reels Delivered",
-      "Up to 2 Reel Makers Onsite",
-      "Complimentary Pictures",
-      "Same Day Preview",
-      "2 Minor Revisions Per Reel",
-      "Raw Footage Access"
-    ]
-  },
-  "Wedding Signature — ₹74,999": {
-    name: "Wedding Signature",
-    price: 74999,
-    badge: "",
-    details: [
-      "6 Events Covered",
-      "25 Reels Delivered",
-      "Up to 2 Reel Makers Onsite",
-      "Dedicated Content Curator",
-      "Social Media Management",
-      "Up to 150 Pictures",
-      "Live Instagram Stories",
+      "10 Instant Wedding Reels",
+      "Full-Day Coverage",
+      "Priority Creator Team",
+      "Bride & Groom Storytelling",
+      "Family, Guest, BTS & Trend Reels",
+      "Shot on iPhone | Edited On-Site",
+      "All Reels Delivered Before Event Ends",
       "2 Minor Revisions Per Reel"
     ]
   },
@@ -130,12 +118,8 @@ const PACKAGES = {
 };
 
 const ADD_ONS = [
-  { id: "extra_reel", name: "Extra Reel", price: 1250, desc: "Get one additional edited reel from your shoot" },
-  { id: "extra_hour", name: "Extra Hour Shoot", price: 1250, desc: "Extend your shoot by one more hour" },
-  { id: "raw_footage", name: "Raw Footage Access", price: 1250, desc: "Receive all unedited raw video files" },
-  { id: "second_maker", name: "Additional Reel Maker", price: 2500, desc: "Add a second creator for bigger events" },
-  { id: "drone", name: "Drone Shot", price: 3500, desc: "Cinematic aerial shots of your venue/event" },
-  { id: "no_watermark", name: "Remove Watermark", price: 2500, desc: "Get your reel without the Crewshoot watermark" }
+  { id: "raw_footage", name: "Raw Footage", price: 999, desc: "Receive all unedited raw video files from your shoot" },
+  { id: "extra_reel", name: "Extra Reel", price: 1899, desc: "Get one additional edited reel from your shoot" },
 ];
 
 
@@ -384,21 +368,20 @@ Please confirm my booking. Thank you!`;
               onChange={(e) => setFormData({...formData, package: e.target.value})}
             >
               <option value="" disabled>Choose your package</option>
-              <optgroup label="── 🎬 Reel Packages ──">
-                <option value="Single Reel Package — ₹1,999">Single Reel Package — ₹1,999</option>
-                <option value="Double Reel Package — ₹4,999 ⭐ Most Popular">Double Reel Package — ₹4,999 ⭐ Most Popular</option>
+              <optgroup label="⚡ Crewshoot Edition">
+                <option value="Crewshoot Edition — 1 Reel — ₹1,899">Crewshoot Edition — 1 Reel — ₹1,899</option>
+                <option value="Crewshoot Edition — 2 Reels — ₹3,899 🔥">Crewshoot Edition — 2 Reels — ₹3,899 🔥</option>
               </optgroup>
-              <optgroup label="── 🎉 Event Packages ──">
-                <option value="Event Starter — ₹9,999">Event Starter — ₹9,999</option>
-                <option value="Event Pro — ₹14,999">Event Pro — ₹14,999</option>
+              <optgroup label="⭐ Premium Edition (No Branding)">
+                <option value="Premium Edition — 1 Reel — ₹2,499">Premium Edition — 1 Reel — ₹2,499</option>
+                <option value="Premium Edition — 2 Reels — ₹4,999">Premium Edition — 2 Reels — ₹4,999</option>
               </optgroup>
-              <optgroup label="── 💍 Wedding Packages ──">
-                <option value="Wedding Starter — ₹14,999">Wedding Starter — ₹14,999</option>
-                <option value="Wedding Classic — ₹39,999 ⭐ Most Popular">Wedding Classic — ₹39,999 ⭐ Most Popular</option>
-                <option value="Wedding Premium — ₹49,999 🏆 Best Seller">Wedding Premium — ₹49,999 🏆 Best Seller</option>
-                <option value="Wedding Signature — ₹74,999">Wedding Signature — ₹74,999</option>
+              <optgroup label="💍 Wedding Reels">
+                <option value="Wedding Starter — 3 Reels — ₹8,999">Wedding Starter — 3 Reels — ₹8,999</option>
+                <option value="Wedding Gold — 6 Reels — ₹14,999 ⭐">Wedding Gold — 6 Reels — ₹14,999 ⭐</option>
+                <option value="Premium Wedding — 10 Reels — ₹24,999">Premium Wedding — 10 Reels — ₹24,999</option>
               </optgroup>
-              <optgroup label="── ❓ Not Sure ──">
+              <optgroup label="❓ Not Sure">
                 <option value="Help me choose the right package">Help me choose the right package</option>
               </optgroup>
             </select>
@@ -587,7 +570,7 @@ Please confirm my booking. Thank you!`;
                  <span>Subtotal</span>
                  <span className="font-bold">₹{totals.subtotal.toLocaleString()}</span>
               </div>
-              
+                            
               <div className="flex justify-between items-center pt-4 border-t border-white/5">
                  <span className="text-xl font-heading font-black text-white italic tracking-tighter uppercase">Total Estimate</span>
                  <div className="text-right">
