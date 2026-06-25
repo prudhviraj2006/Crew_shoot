@@ -87,6 +87,7 @@ const MasonryGrid = () => {
   );
 };
 
+import Image from "next/image";
 import BookingModal from "@/components/BookingModal";
 
 export default function Hero() {
@@ -116,7 +117,7 @@ export default function Hero() {
               className="relative flex items-center justify-center"
             >
                <div className="absolute inset-0 bg-[#f5a623]/20 blur-[60px] rounded-full w-full h-full scale-150"></div>
-               <img src="/logo.png" alt="Crewshoot" className="w-[90px] md:w-[120px] h-auto object-contain relative z-10" />
+               <Image src="/logo.png" alt="Crewshoot" width={120} height={120} priority className="w-[90px] md:w-[120px] h-auto object-contain relative z-10" />
             </motion.div>
           </motion.div>
         )}

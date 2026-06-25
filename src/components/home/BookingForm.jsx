@@ -159,7 +159,7 @@ export default function BookingForm({
     const total = subtotal;
     
     return { subtotal, total, selectedAddOns };
-  }, [formData.package, formData.addOns, selectedPackageData]);
+  }, [formData.addOns, selectedPackageData]);
 
   // Auto-expand summary when required fields are filled
   useEffect(() => {
